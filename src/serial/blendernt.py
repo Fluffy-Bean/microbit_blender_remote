@@ -34,7 +34,7 @@ class Microbit:
     def start(self):
         self.serial_connection.open()
 
-        # Only run the thread of the serial connection successful
+        # Only run the thread if the serial connection successful
         self.thread_running = self.serial_connection.is_open
         self.thread         = threading.Thread(target=self.update, daemon=True)
         self.thread.start()
